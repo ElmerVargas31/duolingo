@@ -1,0 +1,6 @@
+var i=0;var k=0;var valiCome="";var nombres=new Array();var correo=new Array();var coment=new Array();window.setInterval(BlinkIt,500);var color="#"+251+"A"+73;function BlinkIt(){var blink=document.getElementById("blink");color=(color=="#ffffff")?"#"+251+"A"+73:"#ffffff";blink.style.color=color;blink.style.fontSize='20px';blink.style.transition="500ms"}
+function funEnviar(email){if(document.datos.nombre.value!=""){k++}else{alert("Por favor digite un nombre");k=0;document.datos.nombre.focus();return 0}
+var expReg=/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;var correoVa=expReg.test(email);if(correoVa==!0){k++}else{alert("El correo electronico No es valido");document.datos.email.focus();k=0;return 0}
+valiCome=document.datos.comentario.value.length;if(valiCome>10&&valiCome<500){k++}else{alert("Por favor digite un comentario largo");document.datos.comentario.focus();k=0;return 0}
+if(k>2){nombres[i]=document.datos.nombre.value;correo[i]=document.datos.email.value;coment[i]=document.datos.comentario.value;document.datos.nombre.value="";document.datos.email.value="";document.datos.comentario.value="";i++;k=0;if(k==0){document.getElementById("messageVa").style.display="block"}}else{k=0}}
+function funCerrar(){document.getElementById("messageVa").style.display="none"}
